@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: school-attendance-system
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /db_setup.php
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: DB_SERVER
+        value: "mysql-32d19a6e-abadhbihari-33eb.f.aivencloud.com"
+      - key: DB_PORT
+        value: "12893"
+      - key: DB_USERNAME
+        value: "avnadmin"
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: "school_attendance"
+      - key: DB_SSL
+        value: "true"
+      - key: BASE_URL
+        value: "https://school-attendance-management-system-483x.onrender.com"
